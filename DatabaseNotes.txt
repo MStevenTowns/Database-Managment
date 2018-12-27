@@ -1,0 +1,80 @@
+01/05/18
+Relationships and constraints
+	Structural Constraints
+		Cardinality Ratio 	[maximum]
+		Participation/existential Constraints [minimum]
+
+#1 (1:N) relationship
+	Requirement: every employee works for a department; and a department can have many employees. A new department need not have any employees
+	1 Degree of the relationship
+		num of entities in the relationship: (2)
+	2 Cardinality ration
+		max number of relationships that an instance of the entity can participate in: emp(1) Dept(n)
+	3 Minimum Emp(1) Dept(0)
+
+		Emp	Dept
+	Max	1	N
+	Min	1	0
+
+	Cardinality rep
+		[emp]===========<Works for>-----------[Dept]
+			N			1
+
+	Min-max rep
+		[emp]-----------<works for>-----------[Dept]
+			(1,1)			(0,N)
+
+
+#2 (1:1) relationship
+	Every Dpartment must have a manager, and only one employee manages a department, an employee can manage only one department
+	[Emp]---------<manages>--------[Dept]
+		(0,1)		(1,1)	
+
+	1 Degree: 2
+	2 Cardinality(max) 	Emp(1) 	Dept(1)
+	3 Minimum		Emp(0) 	Dept(1)
+	
+		Emp	Dept
+	Max	1	1
+	min	0	1
+
+#3 (N:M) Every employee has to work on at least 1 project; every project should have at least 1 employee
+
+	1 degree: 2
+	2 Max	emp(n)	proj(M)
+	3 min	emp(1)	proj(1)
+
+	[emp]------<works on>-----(proj)
+	     (1,N)           (1,M)
+
+#4 Recursive Relationship
+	Every employee is supervised by a supervisor who is an employee
+		except for CEO, has no boss
+	(still use 3 ovals, just add designation of supervisor/supervise)	
+
+	1 Degree 	2
+	2 Max	emp(1)	sup(N)
+	3 Min	emp(0)	sup(0)
+
+	---<supervise>---
+	|		|
+	|		|
+	------<emp>------
+	(0,N)	   (0,1)		
+
+
+food pantry management
+disaster shelter management
+traffic ticket management
+mobile medical data management (ambulances/fire)
+student university life managment????? (dorm??)
+
+
+Data stream management styems
+probabilistic data systems
+rule based multi-querry optimization
+
+midterm on 12th?
+lab on wednesday
+
+
